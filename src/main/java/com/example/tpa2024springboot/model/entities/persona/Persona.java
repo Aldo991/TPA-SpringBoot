@@ -2,12 +2,19 @@ package com.example.tpa2024springboot.model.entities.persona;
 
 import com.example.tpa2024springboot.model.entities.direccion.Direccion;
 import com.example.tpa2024springboot.model.entities.medioDeContacto.MedioDeContacto;
+import com.example.tpa2024springboot.model.enums.TipoDeDocumento;
 import com.example.tpa2024springboot.model.enums.TipoDeRubro;
 import jakarta.persistence.*;
 import java.time.LocalDate;
 import java.util.UUID;
+import lombok.*;
 
+@Getter
+@Setter
 @Entity
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Persona {
   @Id
   @GeneratedValue(strategy = GenerationType.UUID)
@@ -28,4 +35,9 @@ public class Persona {
   @Enumerated(EnumType.STRING)
   @Column(name = "tipo_de_rubro")
   private TipoDeRubro tipoDeRubro;
+  @Column(name = "nro_documento")
+  private String nroDeDocumento;
+  @Column(name = "tipo_documento")
+  @Enumerated(EnumType.STRING)
+  private TipoDeDocumento tipoDeDocumento;
 }

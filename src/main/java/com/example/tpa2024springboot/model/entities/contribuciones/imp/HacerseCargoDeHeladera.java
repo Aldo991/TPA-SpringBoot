@@ -10,4 +10,9 @@ public class HacerseCargoDeHeladera extends Contribucion {
   public void contribuir() {
 
   }
+
+  @Override
+  public Double obtenerPuntos() {
+    return 0.0;
+  }
 }
