@@ -2,6 +2,8 @@ package com.example.tpa2024springboot.model.entities.persona;
 
 import com.example.tpa2024springboot.model.entities.direccion.Direccion;
 import com.example.tpa2024springboot.model.entities.medioDeContacto.MedioDeContacto;
+import com.example.tpa2024springboot.model.entities.tarjeta.Tarjeta;
+import com.example.tpa2024springboot.model.entities.usuario.Usuario;
 import com.example.tpa2024springboot.model.enums.TipoDeDocumento;
 import com.example.tpa2024springboot.model.enums.TipoDeRubro;
 import jakarta.persistence.*;
@@ -40,4 +42,8 @@ public class Persona {
   @Column(name = "tipo_documento")
   @Enumerated(EnumType.STRING)
   private TipoDeDocumento tipoDeDocumento;
+  @OneToOne
+  private Usuario usuario;
+  @OneToOne
+  private Tarjeta tarjeta;
 }
